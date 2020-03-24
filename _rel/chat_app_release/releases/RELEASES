@@ -1,0 +1,8 @@
+%% coding: utf-8
+[{release,"chat_app_release","1","10.7",
+          [{kernel,"6.5.2","./lib/kernel-6.5.2"},
+           {stdlib,"3.12","./lib/stdlib-3.12"},
+           {chat_app,"0.1.0","./lib/chat_app-0.1.0"},
+           {sasl,"3.4.2","./lib/sasl-3.4.2"},
+           {runtime_tools,"1.14","./lib/runtime_tools-1.14"}],
+          permanent}].

@@ -1,0 +1,7 @@
+{release,{"chat_app_release","1"},
+         {erts,"10.7"},
+         [{kernel,"6.5.2"},
+          {stdlib,"3.12"},
+          {chat_app,"0.1.0"},
+          {sasl,"3.4.2"},
+          {runtime_tools,"1.14"}]}. 
