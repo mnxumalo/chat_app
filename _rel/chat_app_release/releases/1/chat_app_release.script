@@ -1,5 +1,5 @@
 %% coding: utf-8
-%% script generated at {2020,3,24} {21,14,14}
+%% script generated at {2020,3,25} {16,32,9}
 {script,
     {"chat_app_release","1"},
     [{preLoaded,
@@ -50,7 +50,8 @@
           win32reg,zip]},
      {path,["$ROOT/lib/chat_app-0.1.0/ebin"]},
      {primLoad,
-         [chat_app_app,chat_app_sup,chat_client,message_router,server_util]},
+         [chat_app_app,chat_app_sup,chat_client,message_router,message_store,
+          server_util]},
      {path,["$ROOT/lib/sasl-3.4.2/ebin"]},
      {primLoad,
          [alarm_handler,erlsrv,format_lib_supp,misc_supp,rb,rb_format_supp,
@@ -153,7 +154,7 @@
                    {id,[]},
                    {modules,
                        [chat_app_app,chat_app_sup,chat_client,message_router,
-                        server_util]},
+                        message_store,server_util]},
                    {registered,[chat_app_sup]},
                    {applications,[kernel,stdlib]},
                    {included_applications,[]},

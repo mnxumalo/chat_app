@@ -60,18 +60,19 @@ init_store() ->
   end.
 
 store_message(Addressee, Body) ->
-  {_, Created_On, _} = erlang:now(),
+  {_, Created_On, _} = erlang:timestamp(),
   F = fun() -> mnesia:write(#chat_message{addressee = Addressee, body = Body, created_on = Created_On}) end,
   mnesia:transaction(F).
 
 get_messages(Addressee) ->
   F = fun() ->
-      Query = qlc:q([M || M <- mnesia:table(chat_message), M#chat_message.addressee =:= Addressee]),
-    {atomic, Results} = qlc:e(Query),
+      Query = qlc:q([M#chat_message.body || M <- mnesia:table(chat_message), M#chat_message.addressee =:= Addressee]),
+      Results = qlc:e(Query),
       delete_messages(Results),
       Results
       end,
-  mnesia:transaction(F).
+      {atomic, Messages} = mnesia:transaction(F),
+  Messages.
 
 delete_messages(Messages) ->
   F = fun() ->
