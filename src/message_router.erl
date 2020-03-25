@@ -36,7 +36,9 @@ route_messages(Clients) ->
     {send_chat_msg, ClientName, MessageBody} ->
       case dict:find(ClientName, Clients) of
         {ok, ClientPid} -> ClientPid ! {print_msg, MessageBody};
-        error -> io:format("Error! Unknown client~n")
+        error ->
+          message_store:save_message(ClientName, MessageBody),
+          io:format("Archived message for ~p~n", [ClientName])
       end,
       route_messages(Clients);
 
