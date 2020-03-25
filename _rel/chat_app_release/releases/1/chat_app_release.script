@@ -1,5 +1,5 @@
 %% coding: utf-8
-%% script generated at {2020,3,25} {16,32,9}
+%% script generated at {2020,3,25} {16,36,35}
 {script,
     {"chat_app_release","1"},
     [{preLoaded,
