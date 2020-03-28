@@ -9,7 +9,7 @@
 -module(message_store).
 -author("mthulisi").
 
--include_lib("eunit/include/eunit.hrl").
+-include_lib("qlc.hrl").
 
 -record(chat_message, {addressee, body, created_on}).
 
